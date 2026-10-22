@@ -1,0 +1,32 @@
+name: HTML and JS Check
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  explore-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: List Repository Files
+        id: list_files
+        run: |
+          echo "### 📂 Project Structure" >> \$GITHUB_STEP_SUMMARY
+          echo "Found the following files in your repository:" >> \$GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          ls -la >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> \$GITHUB_STEP_SUMMARY
+
+      - name: Verify HTML and JS
+        run: |
+          echo "### 🔍 Code Check" >> \$GITHUB_STEP_SUMMARY
+          if [ -f index.html ]; then
+            echo "✅ **index.html** is present in the root directory!" >> \$GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ **index.html** not found in the root directory. Check your file naming." >> \$GITHUB_STEP_SUMMARY
+          fi
