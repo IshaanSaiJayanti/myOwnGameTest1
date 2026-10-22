@@ -6,7 +6,7 @@ var slingshot, attack1, attack2, attack3;
 var slingshotimg, attack1img, attack2img, attack3img; 
 
 function preload(){
-  bg = loadImage("Images/bg.png");
+  bg = loadImage("Images/bg.jpg");
   narutoimg = loadAnimation("Images/Naruto Running 1.jpg, Images/Naruto Running 2.jpg, Images/Naruto Running 3.jpg, Images/Naruto Running 4.jpg");
   sasukeimg = loadAnimation("Images/Sasuke Running 1.jpg, Images/Sasuke Running 2.jpg, Images/Sasuke Running 3.jpg, Images/Sasuke Running 4.jpg");
 
